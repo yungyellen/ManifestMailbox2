@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest Mailbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #666;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            border: 1px solid #1a1a1a;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: white;
+        }
+
+        .cta-button:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .how-it-works {
+            padding: 8rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 5rem;
+            color: #1a1a1a;
+        }
+
+        .steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 4rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 200;
+            color: #e5e5e5;
+            min-width: 80px;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: #666;
+            font-weight: 300;
+        }
+
+        .preview {
+            padding: 8rem 2rem;
+            background: #fafafa;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .inbox-preview {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e5e5e5;
+        }
+
+        .inbox-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e5e5;
+            font-weight: 400;
+        }
+
+        .email-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e5e5;
+            transition: background 0.2s;
+        }
+
+        .email-item:hover {
+            background: #fafafa;
+        }
+
+        .email-from {
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+
+        .email-subject {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .email-preview {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .features {
+            padding: 8rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .science {
+            padding: 8rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fafafa;
+        }
+
+        .science-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .science-intro {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #1a1a1a;
+            margin-bottom: 4rem;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .science-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .science-item h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .science-item p {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature p {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .manifest-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .form-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .full-width-button {
+            width: 100%;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.1rem;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .step-number {
+                min-width: auto;
+            }
+
+            .how-it-works,
+            .preview,
+            .features,
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Manifest Mailbox</h1>
+            <h2>Open your inbox each morning to emails from your future. Written from the reality you're calling in.</h2>
+            <button class="cta-button" onclick="scrollToWaitlist()">Join the Waitlist</button>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Describe what you're manifesting</h3>
+                    <p>Share your vision in your own words. Add specific details like timeframes, amounts, or feelings you want to experience.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Receive daily emails from your future</h3>
+                    <p>Each morning, open your inbox to 3-7 personalized messages. Written as if they're already happening.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Read, refine, and return tomorrow</h3>
+                    <p>Mark what feels right. Adjust what doesn't. Your manifestation evolves with you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="preview">
+        <h2 class="section-title">Your inbox, reimagined</h2>
+        <div class="inbox-preview">
+            <div class="inbox-header">Today</div>
+            <div class="email-item">
+                <div class="email-from">Future You</div>
+                <div class="email-subject">Re: The book deal is signed</div>
+                <div class="email-preview">I wanted to share the news - the publishing contract came through. The advance was more than we hoped...</div>
+            </div>
+            <div class="email-item">
+                <div class="email-from">Your Agent</div>
+                <div class="email-subject">Speaking engagement confirmed</div>
+                <div class="email-preview">The keynote is locked in for March. They're excited to have you. Let me know about travel...</div>
+            </div>
+            <div class="email-item">
+                <div class="email-from">Your Business Bank</div>
+                <div class="email-subject">Account summary - January</div>
+                <div class="email-preview">Your current balance reflects the consulting revenue from last month. Q1 is looking strong...</div>
+            </div>
+            <div class="email-item">
+                <div class="email-from">Health Coach</div>
+                <div class="email-subject">Your body is thanking you</div>
+                <div class="email-preview">The consistency is paying off. Your energy levels, your sleep, the way your clothes fit...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="science">
+        <h2 class="section-title">The science of visualization</h2>
+        <div class="science-content">
+            <p class="science-intro">Research shows that mental rehearsal activates the same neural pathways as actual experience. When you vividly imagine your future, your brain begins to treat it as real.</p>
+            <div class="science-grid">
+                <div class="science-item">
+                    <h3>Mental rehearsal works</h3>
+                    <p>Studies demonstrate that athletes who visualize their performance show similar brain activity to those physically practicing. Your mind doesn't distinguish between vivid imagination and reality.</p>
+                </div>
+                <div class="science-item">
+                    <h3>Consistency creates pathways</h3>
+                    <p>Daily visualization strengthens neural connections. The more you rehearse your future mentally, the more your brain recognizes it as familiar and achievable.</p>
+                </div>
+                <div class="science-item">
+                    <h3>Detailed imagery matters</h3>
+                    <p>Research shows specific, sensory-rich visualization is more effective than vague daydreaming. The more detail you imagine, the stronger the neurological impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Designed for daily ritual</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Minimal by design</h3>
+                <p>No distractions. No gamification. Just a calm, clean space to receive your daily messages.</p>
+            </div>
+            <div class="feature">
+                <h3>Personalized content</h3>
+                <p>Every email is generated based on your specific manifestation. Your goals, your timeline, your reality.</p>
+            </div>
+            <div class="feature">
+                <h3>Evolves with you</h3>
+                <p>Refine your manifestation anytime. The emails adjust to reflect where you are now.</p>
+            </div>
+            <div class="feature">
+                <h3>Daily reminder</h3>
+                <p>A gentle notification each morning. Your inbox is ready when you are.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="waitlist">
+        <h2>Start manifesting differently</h2>
+        <p>Join the waitlist and set up your manifestation profile. You'll be first to know when we launch.</p>
+        
+        <form class="waitlist-form" id="waitlistForm">
+            <input 
+                type="email" 
+                id="email"
+                placeholder="Your email" 
+                class="email-input" 
+                required
+            >
+            
+            <textarea 
+                id="manifestation"
+                placeholder="What are you manifesting? Describe your vision in detail..." 
+                class="manifest-input" 
+                rows="4"
+                required
+            ></textarea>
+            
+            <input 
+                type="text"
+                id="detail1"
+                placeholder="Specific detail (e.g., $100k, 6 months, New York...)" 
+                class="email-input"
+            >
+            
+            <input 
+                type="text"
+                id="detail2"
+                placeholder="Another detail (e.g., timeframe, feeling, who...)" 
+                class="email-input"
+            >
+            
+            <input 
+                type="text"
+                id="detail3"
+                placeholder="One more detail (optional)" 
+                class="email-input"
+            >
+            
+            <div class="form-section">
+                <label class="form-label">How do you want to feel?</label>
+                <input 
+                    type="text"
+                    id="feelings"
+                    placeholder="e.g., Accomplished, excited, grateful..." 
+                    class="email-input"
+                >
+            </div>
+            
+            <button type="submit" class="cta-button full-width-button">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Manifest Mailbox 2025</p>
+    </footer>
+
+    <script>
+        function scrollToWaitlist() {
+            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Apps Script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoo_CPhqOIsD6UmbQQBc515I4scbLdqJ2cLnuG6nBPcLBEzSifmVVZAfeFJbYhrmI/exec';
+        
+        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                email: document.getElementById('email').value,
+                manifestation: document.getElementById('manifestation').value,
+                detail1: document.getElementById('detail1').value,
+                detail2: document.getElementById('detail2').value,
+                detail3: document.getElementById('detail3').value,
+                feelings: document.getElementById('feelings').value
+            };
+            
+            // Disable button while submitting
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Joining...';
+            submitButton.disabled = true;
+            
+            try {
+                // Send to Google Apps Script
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                // Show success message
+                alert('Thank you for joining the waitlist! We will be in touch soon.');
+                this.reset();
+                
+            } catch (error) {
+                alert('Thank you for joining! Your submission has been received.');
+                this.reset();
+            }
+            
+            // Re-enable button
+            submitButton.textContent = 'Join Waitlist';
+            submitButton.disabled = false;
+        });
+    </script>
+</body>
+</html>
