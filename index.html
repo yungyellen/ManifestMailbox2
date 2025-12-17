@@ -64,6 +64,76 @@
             color: white;
         }
 
+        .cta-section {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: #fafafa;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-tagline {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .manifest-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        .form-section {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .full-width-button {
+            width: 100%;
+        }
+
         .how-it-works {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
@@ -152,11 +222,6 @@
             color: #666;
         }
 
-        .features {
-            padding: 8rem 2rem;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
         .science {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
@@ -195,6 +260,11 @@
             line-height: 1.8;
         }
 
+        .features {
+            padding: 8rem 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
         .features-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -213,68 +283,6 @@
             color: #666;
             font-weight: 300;
             line-height: 1.8;
-        }
-
-        .cta-section {
-            padding: 8rem 2rem;
-            text-align: center;
-            background: #fafafa;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .email-input {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e5e5e5;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .manifest-input {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e5e5e5;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-family: inherit;
-            resize: vertical;
-        }
-
-        .form-section {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-            text-align: left;
-        }
-
-        .waitlist-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .full-width-button {
-            width: 100%;
         }
 
         footer {
@@ -321,8 +329,65 @@
         <div class="hero-content">
             <h1>Manifest Mailbox</h1>
             <h2>Open your inbox each morning to emails from your future. Written from the reality you're calling in.</h2>
-            <button class="cta-button" onclick="scrollToWaitlist()">Join the Waitlist</button>
+            <button class="cta-button" onclick="scrollToWaitlist()">Start Manifesting</button>
         </div>
+    </section>
+
+    <section class="cta-section" id="waitlist">
+        <h2>Start manifesting differently</h2>
+        <p>Set up your manifestation profile and receive your free manifest email</p>
+        
+        <form class="waitlist-form" id="waitlistForm">
+            <input 
+                type="email" 
+                id="email"
+                placeholder="Your email" 
+                class="email-input" 
+                required
+            >
+            
+            <textarea 
+                id="manifestation"
+                placeholder="What are you manifesting? Describe your vision in detail..." 
+                class="manifest-input" 
+                rows="4"
+                required
+            ></textarea>
+            
+            <input 
+                type="text"
+                id="detail1"
+                placeholder="Specific detail (e.g., $100k, 6 months, New York...)" 
+                class="email-input"
+            >
+            
+            <input 
+                type="text"
+                id="detail2"
+                placeholder="Another detail (e.g., timeframe, feeling, who...)" 
+                class="email-input"
+            >
+            
+            <input 
+                type="text"
+                id="detail3"
+                placeholder="One more detail (optional)" 
+                class="email-input"
+            >
+            
+            <div class="form-section">
+                <label class="form-label">How do you want to feel?</label>
+                <input 
+                    type="text"
+                    id="feelings"
+                    placeholder="e.g., Accomplished, excited, grateful..." 
+                    class="email-input"
+                >
+            </div>
+            
+            <button type="submit" class="cta-button full-width-button">Start Manifesting</button>
+            <p class="cta-tagline">Daily Free Manifest Emails</p>
+        </form>
     </section>
 
     <section class="how-it-works">
@@ -422,63 +487,10 @@
         </div>
     </section>
 
-    <section class="cta-section" id="waitlist">
-        <h2>Start manifesting differently</h2>
-        <p>Join the waitlist and set up your manifestation profile. You'll be first to know when we launch.</p>
-        
-        <form class="waitlist-form" id="waitlistForm">
-            <input 
-                type="email" 
-                id="email"
-                placeholder="Your email" 
-                class="email-input" 
-                required
-            >
-            
-            <textarea 
-                id="manifestation"
-                placeholder="What are you manifesting? Describe your vision in detail..." 
-                class="manifest-input" 
-                rows="4"
-                required
-            ></textarea>
-            
-            <input 
-                type="text"
-                id="detail1"
-                placeholder="Specific detail (e.g., $100k, 6 months, New York...)" 
-                class="email-input"
-            >
-            
-            <input 
-                type="text"
-                id="detail2"
-                placeholder="Another detail (e.g., timeframe, feeling, who...)" 
-                class="email-input"
-            >
-            
-            <input 
-                type="text"
-                id="detail3"
-                placeholder="One more detail (optional)" 
-                class="email-input"
-            >
-            
-            <div class="form-section">
-                <label class="form-label">How do you want to feel?</label>
-                <input 
-                    type="text"
-                    id="feelings"
-                    placeholder="e.g., Accomplished, excited, grateful..." 
-                    class="email-input"
-                >
-            </div>
-            
-            <button type="submit" class="cta-button full-width-button">Join Waitlist</button>
-        </form>
-    </section>
-
     <footer>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <button class="cta-button" onclick="scrollToWaitlist()">Start Manifesting</button>
+        </div>
         <p>Manifest Mailbox 2025</p>
     </footer>
 
@@ -529,7 +541,7 @@
             }
             
             // Re-enable button
-            submitButton.textContent = 'Join Waitlist';
+            submitButton.textContent = 'Start Manifesting';
             submitButton.disabled = false;
         });
     </script>
