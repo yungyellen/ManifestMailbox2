@@ -495,54 +495,66 @@
     </footer>
 
     <script>
-        function scrollToWaitlist() {
-            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Apps Script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoo_CPhqOIsD6UmbQQBc515I4scbLdqJ2cLnuG6nBPcLBEzSifmVVZAfeFJbYhrmI/exec';
-        
-        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const formData = {
-                email: document.getElementById('email').value,
-                manifestation: document.getElementById('manifestation').value,
-                detail1: document.getElementById('detail1').value,
-                detail2: document.getElementById('detail2').value,
-                detail3: document.getElementById('detail3').value,
-                feelings: document.getElementById('feelings').value
-            };
-            
-            // Disable button while submitting
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.textContent = 'Joining...';
-            submitButton.disabled = true;
-            
-            try {
-                // Send to Google Apps Script
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                // Show success message
-                alert('Thank you for joining the waitlist! We will be in touch soon.');
-                this.reset();
-                
-            } catch (error) {
-                alert('Thank you for joining! Your submission has been received.');
-                this.reset();
+        document.addEventListener('DOMContentLoaded', function() {
+            function scrollToWaitlist() {
+                const waitlistSection = document.getElementById('waitlist');
+                if (waitlistSection) {
+                    waitlistSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
+
+            const heroButton = document.getElementById('heroButton');
+            if (heroButton) {
+                heroButton.addEventListener('click', scrollToWaitlist);
+            }
+
+            const footerButton = document.getElementById('footerButton');
+            if (footerButton) {
+                footerButton.addEventListener('click', scrollToWaitlist);
+            }
+
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoo_CPhqOIsD6UmbQQBc515I4scbLdqJ2cLnuG6nBPcLBEzSifmVVZAfeFJbYhrmI/exec';
             
-            // Re-enable button
-            submitButton.textContent = 'Start Manifesting';
-            submitButton.disabled = false;
+            const form = document.getElementById('waitlistForm');
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        email: document.getElementById('email').value,
+                        manifestation: document.getElementById('manifestation').value,
+                        detail1: document.getElementById('detail1').value,
+                        detail2: document.getElementById('detail2').value,
+                        detail3: document.getElementById('detail3').value,
+                        feelings: document.getElementById('feelings').value
+                    };
+                    
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    submitButton.textContent = 'Joining...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        await fetch(SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formData)
+                        });
+                        
+                        alert('Thank you for signing up. You will receive a Welcome Email shortly. Add today@manifestmailbox to your safe sender list. Happy Manifesting!');
+                        this.reset();
+                        
+                    } catch (error) {
+                        alert('Thank you for joining! Your submission has been received.');
+                        this.reset();
+                    }
+                    
+                    submitButton.textContent = 'Start Manifesting';
+                    submitButton.disabled = false;
+                });
+            }
         });
     </script>
 </body>
