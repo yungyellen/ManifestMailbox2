@@ -10,14 +10,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background: #ffffff;
         }
-
         .eyebrow {
             font-size: 0.75rem;
             letter-spacing: 0.15em;
@@ -29,7 +27,6 @@
             position: relative;
             padding-bottom: 0.9rem;
         }
-
         .eyebrow::after {
             content: "";
             position: absolute;
@@ -40,13 +37,11 @@
             height: 2px;
             background: #C9A05C;
         }
-
         .hero .eyebrow::after,
         .cta-section .eyebrow::after {
             display: none;
         }
-
-        .free-badge {
+        .price-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
@@ -59,8 +54,7 @@
             font-weight: 500;
             letter-spacing: 0.01em;
         }
-
-        .free-badge::before {
+        .price-badge::before {
             content: "";
             width: 6px;
             height: 6px;
@@ -68,8 +62,6 @@
             background: #C9A05C;
             display: inline-block;
         }
-
-        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -78,23 +70,19 @@
             padding: 2rem;
             border-bottom: 1px solid #e5e5e5;
         }
-
         .hero-content {
             max-width: 620px;
             text-align: center;
         }
-
-        .hero .free-badge {
+        .hero .price-badge {
             margin-bottom: 2rem;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 300;
             margin-bottom: 1.25rem;
             letter-spacing: -0.02em;
         }
-
         .hero h2 {
             font-size: 1.25rem;
             font-weight: 300;
@@ -102,21 +90,17 @@
             margin-bottom: 2.5rem;
             line-height: 1.8;
         }
-
         .hero-actions {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.9rem;
         }
-
         .hero-microcopy {
             font-size: 0.85rem;
             color: #999;
             font-weight: 300;
         }
-
-        /* CTA buttons */
         .cta-button {
             display: inline-block;
             padding: 1rem 3rem;
@@ -128,39 +112,31 @@
             cursor: pointer;
             background: white;
         }
-
         .cta-button:hover {
             background: #1a1a1a;
             color: white;
         }
-
         .cta-button.solid {
             background: #1a1a1a;
             color: white;
         }
-
         .cta-button.solid:hover {
             background: #333;
         }
-
-        /* SIGNUP SECTION */
         .cta-section {
             padding: 7rem 2rem;
             text-align: center;
             background: #fafafa;
             border-bottom: 1px solid #e5e5e5;
         }
-
         .cta-section .eyebrow {
             text-align: center;
         }
-
         .cta-section h2 {
             font-size: 2.25rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
-
         .cta-section p.lede {
             font-size: 1.05rem;
             color: #666;
@@ -169,8 +145,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        /* Streak teaser strip */
         .streak-teaser {
             max-width: 500px;
             margin: 0 auto 2.5rem;
@@ -182,7 +156,6 @@
             background: white;
             border: 1px solid #e5e5e5;
         }
-
         .streak-dot {
             width: 9px;
             height: 9px;
@@ -190,17 +163,14 @@
             background: #e5e5e5;
             flex-shrink: 0;
         }
-
         .streak-dot.filled {
             background: #C9A05C;
         }
-
         .streak-teaser span.label {
             font-size: 0.85rem;
             color: #666;
             font-weight: 300;
         }
-
         .email-input {
             width: 100%;
             padding: 1rem;
@@ -210,23 +180,26 @@
             font-family: inherit;
             background: white;
         }
-
         .manifest-input {
             width: 100%;
             padding: 1rem;
             border: 1px solid #e5e5e5;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 1rem;
             font-family: inherit;
             resize: vertical;
             background: white;
         }
-
+        .manifest-hint {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
         .form-section {
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
         }
-
         .form-label {
             display: block;
             font-size: 0.9rem;
@@ -234,84 +207,75 @@
             margin-bottom: 0.5rem;
             text-align: left;
         }
-
         .waitlist-form {
             max-width: 500px;
             margin: 0 auto;
             text-align: left;
         }
-
         .full-width-button {
             width: 100%;
         }
-
         .form-footnote {
             font-size: 0.85rem;
             color: #999;
             margin-top: 1rem;
             font-weight: 300;
+            text-align: center;
         }
-
-        /* HOW IT WORKS */
+        .error-message {
+            font-size: 0.85rem;
+            color: #c0392b;
+            margin-top: 0.5rem;
+            display: none;
+        }
         .how-it-works {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
         }
-
         .section-header {
             text-align: center;
             max-width: 600px;
             margin: 0 auto 5rem;
         }
-
         .section-title {
             font-size: 2rem;
             font-weight: 300;
             color: #1a1a1a;
         }
-
         .section-header .eyebrow {
             text-align: center;
         }
-
         .steps {
             max-width: 900px;
             margin: 0 auto;
             display: grid;
             gap: 4rem;
         }
-
         .step {
             display: flex;
             gap: 2rem;
             align-items: start;
         }
-
         .step-number {
             font-size: 3rem;
             font-weight: 200;
             color: #E3C98C;
             min-width: 80px;
         }
-
         .step-content h3 {
             font-size: 1.5rem;
             font-weight: 400;
             margin-bottom: 0.5rem;
         }
-
         .step-content p {
             color: #666;
             font-weight: 300;
         }
-
-        /* RITUAL SECTION (new) */
         .ritual {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
             background: #fafafa;
         }
-
         .ritual-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -319,14 +283,12 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
         }
-
         .ritual-card {
             background: white;
             border: 1px solid #e5e5e5;
             padding: 2.25rem 1.75rem;
             text-align: center;
         }
-
         .ritual-icon {
             width: 52px;
             height: 52px;
@@ -337,7 +299,6 @@
             justify-content: center;
             margin: 0 auto 1.25rem;
         }
-
         .ritual-icon svg {
             width: 24px;
             height: 24px;
@@ -347,7 +308,6 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-
         .ritual-card .ritual-mark {
             font-size: 0.75rem;
             letter-spacing: 0.1em;
@@ -357,20 +317,17 @@
             margin-bottom: 1rem;
             display: block;
         }
-
         .ritual-card h3 {
             font-size: 1.15rem;
             font-weight: 400;
             margin-bottom: 0.6rem;
         }
-
         .ritual-card p {
             color: #666;
             font-weight: 300;
             font-size: 0.95rem;
             line-height: 1.7;
         }
-
         .ritual-note {
             text-align: center;
             max-width: 560px;
@@ -380,20 +337,16 @@
             font-weight: 300;
             font-style: italic;
         }
-
-        /* PREVIEW */
         .preview {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
         }
-
         .inbox-preview {
             max-width: 700px;
             margin: 0 auto;
             background: white;
             border: 1px solid #e5e5e5;
         }
-
         .inbox-header {
             padding: 1.5rem;
             border-bottom: 1px solid #e5e5e5;
@@ -402,7 +355,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .inbox-header .streak-pill {
             font-size: 0.75rem;
             color: #8a6a2f;
@@ -411,17 +363,14 @@
             border-radius: 999px;
             font-weight: 500;
         }
-
         .email-item {
             padding: 1.5rem;
             border-bottom: 1px solid #e5e5e5;
             transition: background 0.2s;
         }
-
         .email-item:hover {
             background: #fafafa;
         }
-
         .email-from {
             font-weight: 400;
             margin-bottom: 0.25rem;
@@ -429,7 +378,6 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .email-from::before {
             content: "";
             width: 7px;
@@ -439,29 +387,23 @@
             display: inline-block;
             flex-shrink: 0;
         }
-
         .email-subject {
             font-size: 0.95rem;
             margin-bottom: 0.25rem;
         }
-
         .email-preview {
             font-size: 0.9rem;
             color: #666;
         }
-
-        /* SCIENCE */
         .science {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
             background: #fafafa;
         }
-
         .science-content {
             max-width: 900px;
             margin: 0 auto;
         }
-
         .science-intro {
             font-size: 1.25rem;
             line-height: 1.8;
@@ -470,31 +412,25 @@
             text-align: center;
             font-weight: 300;
         }
-
         .science-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
         }
-
         .science-item h3 {
             font-size: 1.25rem;
             font-weight: 400;
             margin-bottom: 0.75rem;
         }
-
         .science-item p {
             color: #666;
             font-weight: 300;
             line-height: 1.8;
         }
-
-        /* FEATURES */
         .features {
             padding: 8rem 2rem;
             border-bottom: 1px solid #e5e5e5;
         }
-
         .features-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -502,12 +438,10 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
         }
-
         .feature {
             position: relative;
             padding-left: 2rem;
         }
-
         .feature::before {
             content: "";
             position: absolute;
@@ -519,38 +453,31 @@
             border-radius: 3px;
             transform: rotate(45deg);
         }
-
         .feature h3 {
             font-size: 1.25rem;
             font-weight: 400;
             margin-bottom: 0.75rem;
         }
-
         .feature p {
             color: #666;
             font-weight: 300;
             line-height: 1.8;
         }
-
-        /* FINAL CTA */
         .final-cta {
             padding: 8rem 2rem;
             text-align: center;
             background: #1a1a1a;
             color: white;
         }
-
         .final-cta .eyebrow {
             color: #999;
             text-align: center;
         }
-
         .final-cta h2 {
             font-size: 2.25rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
-
         .final-cta p {
             color: #ccc;
             font-weight: 300;
@@ -559,29 +486,24 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .final-cta .cta-button {
             background: white;
             border-color: white;
             color: #1a1a1a;
         }
-
         .final-cta .cta-button:hover {
             background: transparent;
             color: white;
         }
-
-        .final-cta .free-badge {
+        .final-cta .price-badge {
             background: rgba(201, 160, 92, 0.15);
             border-color: rgba(201, 160, 92, 0.4);
             color: #E3C98C;
             margin-bottom: 2rem;
         }
-
-        .final-cta .free-badge::before {
+        .final-cta .price-badge::before {
             background: #E3C98C;
         }
-
         footer {
             padding: 3rem 2rem;
             text-align: center;
@@ -590,62 +512,34 @@
             font-weight: 300;
             background: #1a1a1a;
         }
-
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.1rem;
-            }
-
-            .step {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .step-number {
-                min-width: auto;
-            }
-
-            .how-it-works,
-            .preview,
-            .features,
-            .cta-section,
-            .ritual,
-            .final-cta {
-                padding: 4rem 1.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ritual-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.1rem; }
+            .step { flex-direction: column; gap: 1rem; }
+            .step-number { min-width: auto; }
+            .how-it-works, .preview, .features, .cta-section, .ritual, .final-cta { padding: 4rem 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .ritual-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="hero-content">
-            <span class="free-badge">Free to join — no card required</span>
+            <span class="price-badge">$1 / month</span>
             <h1>Manifest Mailbox</h1>
-            <h2>Open your inbox each morning to emails from your future. Written from the reality you're calling in.</h2>
+            <h2>Open your inbox each morning to emails from your future. Backed by science. Written from the reality you're creating.</h2>
             <div class="hero-actions">
-                <button class="cta-button solid" onclick="scrollToWaitlist()">Create your free account</button>
-                <span class="hero-microcopy">Takes 30 seconds. Your first email arrives today.</span>
+                <button class="cta-button solid" onclick="scrollToWaitlist()">Start Manifesting — $1/month</button>
+                <span class="hero-microcopy">Takes 30 seconds. Cancel anytime.</span>
             </div>
         </div>
     </section>
 
     <section class="cta-section" id="waitlist">
-        <span class="eyebrow">Why it's free</span>
+        <span class="eyebrow">Start today</span>
         <h2>Start manifesting differently</h2>
-        <p class="lede">Free to join. Set up your profile once and your first manifest email lands in minutes.</p>
-
+        <p class="lede">$1/month to cover costs — set up your manifestation profile and your daily emails begin immediately.</p>
         <div class="streak-teaser">
             <span class="streak-dot filled"></span>
             <span class="streak-dot"></span>
@@ -654,7 +548,6 @@
             <span class="streak-dot"></span>
             <span class="label">Day 1 of your streak starts the moment you sign up</span>
         </div>
-
         <form class="waitlist-form" id="waitlistForm">
             <input 
                 type="email" 
@@ -663,36 +556,33 @@
                 class="email-input" 
                 required
             >
-            
             <textarea 
                 id="manifestation"
-                placeholder="What are you manifesting? Describe your vision in detail..." 
+                placeholder="What are you manifesting? The more specific you are — amounts, timeframes, feelings, who's involved — the more personalised your daily emails will be..." 
                 class="manifest-input" 
-                rows="4"
+                rows="5"
+                minlength="80"
                 required
             ></textarea>
-            
+            <p class="manifest-hint">The more detail you give, the better your emails.</p>
             <input 
                 type="text"
                 id="detail1"
                 placeholder="Specific detail (e.g., $100k, 6 months, New York...)" 
                 class="email-input"
             >
-            
             <input 
                 type="text"
                 id="detail2"
                 placeholder="Another detail (e.g., timeframe, feeling, who...)" 
                 class="email-input"
             >
-            
             <input 
                 type="text"
                 id="detail3"
                 placeholder="One more detail (optional)" 
                 class="email-input"
             >
-            
             <div class="form-section">
                 <label class="form-label">How do you want to feel?</label>
                 <input 
@@ -702,40 +592,10 @@
                     class="email-input"
                 >
             </div>
-            
-            <button type="submit" class="cta-button solid full-width-button">Create your free account</button>
-            <p class="form-footnote">Free to join. No card required.</p>
+            <p class="error-message" id="errorMessage">Something went wrong — please try again.</p>
+            <button type="submit" class="cta-button solid full-width-button" id="submitBtn">Start Manifesting — $1/month</button>
+            <p class="form-footnote">$1/month. Cancel anytime.</p>
         </form>
-    </section>
-
-    <section class="how-it-works">
-        <div class="section-header">
-            <span class="eyebrow">The process</span>
-            <h2 class="section-title">How it works</h2>
-        </div>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">01</div>
-                <div class="step-content">
-                    <h3>Describe what you're manifesting</h3>
-                    <p>Share your vision in your own words. Add specific details like timeframes, amounts, or feelings you want to experience.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-number">02</div>
-                <div class="step-content">
-                    <h3>Receive daily emails from your future</h3>
-                    <p>Each morning, open your inbox to a message written as if it's already happening. Free, every day, for as long as you're manifesting.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-number">03</div>
-                <div class="step-content">
-                    <h3>Read, refine, and return tomorrow</h3>
-                    <p>Mark what feels right. Adjust what doesn't. Your manifestation evolves with you — and your streak grows with it.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="ritual">
@@ -772,6 +632,32 @@
         <p class="ritual-note">Coming soon: tick off your ritual each day to unlock tomorrow's email and build your streak.</p>
     </section>
 
+    <section class="how-it-works">
+        <div class="section-header">
+            <span class="eyebrow">The process</span>
+            <h2 class="section-title">How it works</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Describe what you're manifesting</h3>
+                    <p>Share your vision in your own words. Add specific details like timeframes, amounts, or feelings you want to experience.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Receive daily emails from your future</h3>
+                    <p>Each morning, open your inbox to a message written as if it's already happening — personalized to your exact manifestation.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 4rem;">
+            <button class="cta-button solid" onclick="scrollToWaitlist()">I'm ready to start — $1/month</button>
+        </div>
+    </section>
+
     <section class="preview">
         <div class="section-header">
             <span class="eyebrow">A look inside</span>
@@ -805,6 +691,10 @@
         </div>
     </section>
 
+    <div style="text-align: center; padding: 4rem 2rem; border-bottom: 1px solid #e5e5e5;">
+        <button class="cta-button solid" onclick="scrollToWaitlist()">I'm ready to start — $1/month</button>
+    </div>
+
     <section class="science">
         <div class="section-header">
             <span class="eyebrow">The evidence</span>
@@ -829,6 +719,10 @@
         </div>
     </section>
 
+    <div style="text-align: center; padding: 4rem 2rem; border-bottom: 1px solid #e5e5e5; background: #fafafa;">
+        <button class="cta-button solid" onclick="scrollToWaitlist()">Start manifesting — $1/month</button>
+    </div>
+
     <section class="features">
         <div class="section-header">
             <span class="eyebrow">Why people stay</span>
@@ -848,17 +742,17 @@
                 <p>Refine your manifestation anytime. The emails adjust to reflect where you are now.</p>
             </div>
             <div class="feature">
-                <h3>Free to use</h3>
-                <p>No tiers, no trial period, no upsell to navigate. Just sign up and start receiving your daily manifest emails.</p>
+                <h3>$1 / month</h3>
+                <p>Daily personalised emails for less than a coffee a month. Cancel anytime — no questions asked.</p>
             </div>
         </div>
     </section>
 
     <section class="final-cta">
-        <span class="free-badge">100% free to join</span>
+        <span class="price-badge">Start today for $1/month</span>
         <h2>Your future self is waiting in your inbox</h2>
-        <p>Set up your manifestation profile in under a minute. No card, no catch — just your first email, today.</p>
-        <button class="cta-button" onclick="scrollToWaitlist()">Create your free account</button>
+        <p>Set up your manifestation profile in under a minute. Cancel anytime.</p>
+        <button class="cta-button" onclick="scrollToWaitlist()">Start Manifesting — $1/month</button>
     </section>
 
     <footer>
@@ -866,54 +760,60 @@
     </footer>
 
     <script>
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz951QmsW4c4DR9_hli29Cgn5zSeoZIrqeXlL9PdinldzZSlQ6-bzmMzkXiIEfLgCUy/exec';
+
         function scrollToWaitlist() {
             document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Apps Script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxoo_CPhqOIsD6UmbQQBc515I4scbLdqJ2cLnuG6nBPcLBEzSifmVVZAfeFJbYhrmI/exec';
-        
         document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form values
+
+            const submitBtn = document.getElementById('submitBtn');
+            const errorMsg = document.getElementById('errorMessage');
+            errorMsg.style.display = 'none';
+
+            const manifestation = document.getElementById('manifestation').value;
+            if (manifestation.length < 80) {
+                errorMsg.textContent = 'Please describe your manifestation in a bit more detail (at least 80 characters).';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            submitBtn.textContent = 'Setting up your account...';
+            submitBtn.disabled = true;
+
             const formData = {
+                action: 'createCheckout',
                 email: document.getElementById('email').value,
-                manifestation: document.getElementById('manifestation').value,
+                manifestation: manifestation,
                 detail1: document.getElementById('detail1').value,
                 detail2: document.getElementById('detail2').value,
                 detail3: document.getElementById('detail3').value,
                 feelings: document.getElementById('feelings').value
             };
-            
-            // Disable button while submitting
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.textContent = 'Creating your account...';
-            submitButton.disabled = true;
-            
+
             try {
-                // Send to Google Apps Script
-                await fetch(SCRIPT_URL, {
+                const response = await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'text/plain' },
                     body: JSON.stringify(formData)
                 });
-                
-                // Show success message
-                alert("You're in! Your first manifest email is on its way. Add today@manifestmailbox.com to your contacts so it doesn't land in spam.");
-                this.reset();
-                
+
+                const result = await response.json();
+
+                if (result.url) {
+                    window.location.href = result.url;
+                } else {
+                    throw new Error(result.error || 'No checkout URL returned');
+                }
             } catch (error) {
-                alert('Thank you for joining! Your submission has been received.');
-                this.reset();
+                console.error('Error:', error);
+                errorMsg.textContent = 'Something went wrong — please try again.';
+                errorMsg.style.display = 'block';
+                submitBtn.textContent = 'Start Manifesting — $1/month';
+                submitBtn.disabled = false;
             }
-            
-            // Re-enable button
-            submitButton.textContent = 'Create your free account';
-            submitButton.disabled = false;
         });
     </script>
 </body>
