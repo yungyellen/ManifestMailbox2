@@ -760,7 +760,7 @@
     </footer>
 
     <script>
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz951QmsW4c4DR9_hli29Cgn5zSeoZIrqeXlL9PdinldzZSlQ6-bzmMzkXiIEfLgCUy/exec';
+        const CHECKOUT_API_URL = 'https://qpzxcbnsnrcxfijrdkmo.supabase.co/functions/v1/create-checkout';
 
         function scrollToWaitlist() {
             document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
@@ -784,7 +784,6 @@
             submitBtn.disabled = true;
 
             const formData = {
-                action: 'createCheckout',
                 email: document.getElementById('email').value,
                 manifestation: manifestation,
                 detail1: document.getElementById('detail1').value,
@@ -794,9 +793,9 @@
             };
 
             try {
-                const response = await fetch(APPS_SCRIPT_URL, {
+                const response = await fetch(CHECKOUT_API_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'text/plain' },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
 
